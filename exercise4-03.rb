@@ -4,6 +4,8 @@ puts  "What's your name?"
 
 user_name = gets.chomp.to_s
 
+
+#IF BOTH STRINGS ARE EQUAL RESULT WILL BE ZERO
 result = user_name <=> my_name
 
 if result == 0
