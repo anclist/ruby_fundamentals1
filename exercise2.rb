@@ -8,3 +8,7 @@ puts "I am " + 34.to_s + " years old"
 
 #USING STRING INTERPOLATION
 puts "The result of multiplying 45628 by 7839 is #{45628 * 7839}"
+
+#BOOLEAN: I believe the result is true
+puts (10 < 20 && 30 < 20) || !(10 == 11)
+#I was right!!!
