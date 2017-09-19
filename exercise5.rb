@@ -21,7 +21,7 @@ while distance >=0
 
 #Promtps the question
 puts "Would you like to walk, run, eat or go home?"
-  answer = gets.chomp.to_s
+  answer = gets.chomp.downcase.to_s
 
   if answer == walk
 #Adds 1 to the distance and 10 to energy, everytime the answer is equal to walk
@@ -39,8 +39,8 @@ puts "Would you like to walk, run, eat or go home?"
     puts "Distance from home is #{distance += eat_distance}km. Your energy level is #{energy += eat_energy}"
 #Sets the distance below zero and send player home. End of Game
   elsif answer == go_home
-    puts "You're home now, get a shower!"
-    distance = -1
+    puts "You're home now, go get a shower! You traveled #{distance}km!"
+    break
 #Makes walk, run, eat or go home the only possible answers
   elsif answer != walk || answer != run || answer != eat || answer != go_home
     puts "That's not the right answer, the options are walk, run, eat or go home"
