@@ -2,19 +2,24 @@
 
 walk = "walk"
 run = "run"
+eat = "eat"
+go_home = "go home"
+
+distance = 0
 walk_distance = 1
 run_distance = 5
-go_home = "go home"
-distance = 0
+eat_distance = 0
+
 energy = 100
-walk_energy = 15
-run_energy = 10
+walk_energy = 10
+run_energy = 15
+eat_energy = 5
 
 #Will keep running as long as the distance has a positive number
 while distance >=0
 
 #Gets the answer from the user, possible answers can only be walk or run
-puts "Would you like to walk, run or go home?"
+puts "Would you like to walk, run, eat or go home?"
   answer = gets.chomp.to_s
 
   if answer == walk
@@ -27,11 +32,13 @@ puts "Would you like to walk, run or go home?"
     else
     puts "You don't have enough energy to run."
     end
+  elsif answer == eat
+    puts "Distance from home is #{distance += eat_distance}km. Your energy level is #{energy += eat_energy}"
   elsif answer == go_home
     puts "You're home now, get a shower!"
     distance = -1
 #Makes walk or run the only possible answers
-  elsif answer != walk || answer != run || answer != go_home
-    puts "That's not the right answer, the options are walk, run or go home"
+  elsif answer != walk || answer != run || answer != eat || answer != go_home
+    puts "That's not the right answer, the options are walk, run, eat or go home"
   end
 end
